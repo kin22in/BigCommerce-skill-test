@@ -1,0 +1,13 @@
+.Category {
+}
+.banner-wrapper {
+  position: relative;
+}
+.banner-image {
+  position: relative;
+}
+.banner-text {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+}

@@ -1,0 +1,12 @@
+.Cart table thead th {
+  border: none;
+  color: #888888;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.Cart {
+  color: #888888;
+}
