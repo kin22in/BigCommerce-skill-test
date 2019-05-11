@@ -1,8 +1,11 @@
 .modal-wrapper {
   position: fixed;
-  top: 80px;
+  top: 85px;
   right: 10px;
   background: #ffffff;
   z-index: 2;
-  display: flex;
+  /* display: flex; */
+  /* height: 100px; */
+  overflow-y: scroll;
+  max-height: 50vh;
 }
