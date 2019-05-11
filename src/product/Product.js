@@ -2,25 +2,14 @@ import React, { Component } from "react";
 import "./Product.css";
 import { ProductConsumer } from "../context.js";
 class Product extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: props.match.params.id
-    };
-  }
-
+  state = {
+    tempCart: 0,
+    shouldUpdate: true
+  };
   render() {
     return (
       <ProductConsumer>
-        {({
-          productDetail,
-          cart,
-          incrementQuanity,
-          getIndexOf,
-          getItemById,
-          addToCart,
-          decrementQuanity
-        }) => {
+        {({ productDetail, getIndexOf, getItemById, addToCart }) => {
           const {
             title,
             brand,
@@ -29,6 +18,7 @@ class Product extends Component {
             productId,
             description
           } = productDetail;
+
           return (
             <div className="container">
               <div className="row text-center">
@@ -48,15 +38,25 @@ class Product extends Component {
                   <hr className="px-1" />
                   <div className="d-flex justify-content-center align-items-stretch">
                     <div className="bg-light border mx-1 px-3 d-flex align-items-center">
-                      {getIndexOf("cart", productId) >= 0
+                      {this.state.shouldUpdate &&
+                      getIndexOf("cart", productId) >= 0
                         ? getItemById("cart", productId).quantity
-                        : 0}
+                        : this.state.tempCart}
                     </div>
                     <div className="mr-3 d-flex flex-column">
                       <div className="">
                         <button
                           onClick={() => {
-                            addToCart(productId);
+                            let tempQuantity =
+                              this.state.shouldUpdate &&
+                              getIndexOf("cart", productId) >= 0
+                                ? getItemById("cart", productId).quantity + 1
+                                : this.state.tempCart + 1;
+
+                            this.setState({
+                              tempCart: tempQuantity,
+                              shouldUpdate: false
+                            });
                           }}
                           className="w-100 btn border mb-1 btn-light"
                         >
@@ -66,7 +66,16 @@ class Product extends Component {
                       <div className="">
                         <button
                           onClick={() => {
-                            decrementQuanity(productId);
+                            let tempQuantity =
+                              this.state.shouldUpdate &&
+                              getIndexOf("cart", productId) >= 0
+                                ? getItemById("cart", productId).quantity - 1
+                                : this.state.tempCart - 1;
+
+                            this.setState({
+                              tempCart: tempQuantity,
+                              shouldUpdate: false
+                            });
                           }}
                           className="btn w-100 border btn-light"
                         >
@@ -76,7 +85,7 @@ class Product extends Component {
                     </div>
                     <button
                       onClick={() => {
-                        addToCart(productId);
+                        addToCart(productId, this.state.tempCart);
                       }}
                       className="rounded-0 btn btn-dark border"
                     >

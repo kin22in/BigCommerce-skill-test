@@ -19,8 +19,6 @@
     "dev-server": "json-server -p 8080 db.json"
   },
   "devDependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
     "prettier": "^1.17.0"
   }
 }

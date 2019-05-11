@@ -95,11 +95,12 @@ class ProductProvider extends Component {
     });
   };
 
-  incrementQuanity = productId => {
+  incrementQuanity = (productId, setQuantity) => {
     let tempCart = [...this.state.cart];
     let getExisitngIndex = this.getIndexOf("cart", productId);
-    tempCart[getExisitngIndex].quantity =
-      tempCart[getExisitngIndex].quantity + 1;
+    tempCart[getExisitngIndex].quantity = setQuantity
+      ? setQuantity
+      : tempCart[getExisitngIndex].quantity + 1;
     tempCart[getExisitngIndex].total =
       tempCart[getExisitngIndex].quantity * tempCart[getExisitngIndex].price;
     let cartMetaDetails = this.updateCartMetaDetails(tempCart);
@@ -113,7 +114,7 @@ class ProductProvider extends Component {
   decrementQuanity = productId => {
     let tempCart = [...this.state.cart];
     let getExisitngIndex = this.getIndexOf("cart", productId);
-    if (getExisitngIndex >= 0 && tempCart[getExisitngIndex].quantity > 0) {
+    if (tempCart[getExisitngIndex].quantity > 0) {
       tempCart[getExisitngIndex].quantity =
         tempCart[getExisitngIndex].quantity - 1;
       tempCart[getExisitngIndex].total =
@@ -127,11 +128,11 @@ class ProductProvider extends Component {
     }
   };
 
-  createNewCardEntry(productId) {
+  createNewCartEntry(productId, setQuantity) {
     let productToAdd = this.getItemById("products", productId);
     let tempProduct = { ...productToAdd };
     let tempCart = [...this.state.cart];
-    tempProduct.quantity = 1;
+    tempProduct.quantity = setQuantity ? setQuantity : 1;
     tempProduct.total = tempProduct.quantity * tempProduct.price;
     tempCart.push(tempProduct);
     let cartMetaDetails = this.updateCartMetaDetails(tempCart);
@@ -156,11 +157,11 @@ class ProductProvider extends Component {
     });
   };
 
-  addToCart = productId => {
+  addToCart = (productId, setQuantity) => {
     let indexOfCartItem = this.getIndexOf("cart", productId);
     indexOfCartItem >= 0
-      ? this.incrementQuanity(productId)
-      : this.createNewCardEntry(productId);
+      ? this.incrementQuanity(productId, setQuantity)
+      : this.createNewCartEntry(productId, setQuantity);
   };
 
   render() {

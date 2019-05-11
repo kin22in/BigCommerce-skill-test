@@ -27,6 +27,9 @@ export default function Cart() {
                           <tr className="border-0">
                             <th scope="col">Product</th>
                             <th className="text-center" scope="col">
+                              Price
+                            </th>
+                            <th className="text-center" scope="col">
                               Quantity
                             </th>
                             <th className="text-center" scope="col">
@@ -58,11 +61,15 @@ export default function Cart() {
                                     </div>
                                   </div>
                                 </td>
+                                <td className="text-center text-muted">
+                                  {item.price}
+                                </td>
                                 <td>
                                   <div className="d-flex justify-content-center align-items-stretch">
                                     <div className="bg-light border mx-1 px-3 d-flex align-items-center">
                                       {item.quantity}
                                     </div>
+
                                     <div className="mr-3 d-flex flex-column">
                                       <div className="">
                                         <button
