@@ -114,7 +114,6 @@ class ProductProvider extends Component {
     let tempCart = [...this.state.cart];
     let getExisitngIndex = this.getIndexOf("cart", productId);
     if (getExisitngIndex >= 0 && tempCart[getExisitngIndex].quantity > 0) {
-      console.log("decrement");
       tempCart[getExisitngIndex].quantity =
         tempCart[getExisitngIndex].quantity - 1;
       tempCart[getExisitngIndex].total =
@@ -143,7 +142,8 @@ class ProductProvider extends Component {
     });
   }
 
-  removeFromCart = productId => {
+  removeFromCart = (event, productId) => {
+    event.stopPropagation();
     let indexOfCartItem = this.getIndexOf("cart", productId);
     let tempCart = [...this.state.cart];
     //remove the item at that index

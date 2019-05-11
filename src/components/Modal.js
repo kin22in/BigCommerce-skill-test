@@ -59,8 +59,8 @@ export default class Modal extends Component {
                                     </td>
                                     <td className="text-right">
                                       <button
-                                        onClick={() => {
-                                          removeFromCart(item.productId);
+                                        onClick={ev => {
+                                          removeFromCart(ev, item.productId);
                                         }}
                                         className="btn p-0 text-muted btn-link btn-lg"
                                       >

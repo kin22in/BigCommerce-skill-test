@@ -18,11 +18,6 @@ export default class Header extends Component {
                 Home
               </Link>
             </li>
-            {/* <li className="nav-item">
-              <Link className="nav-link" to="/Shop">
-                Shop (DropDOwn)
-              </Link>
-            </li> */}
             <li className="nav-item dropdown">
               <a
                 href="https://www.bigcommerce.com.au/product/"

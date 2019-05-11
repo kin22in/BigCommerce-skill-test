@@ -92,8 +92,8 @@ export default function Cart() {
                                 </td>
                                 <td className="text-right">
                                   <button
-                                    onClick={() => {
-                                      removeFromCart(item.productId);
+                                    onClick={ev => {
+                                      removeFromCart(ev, item.productId);
                                     }}
                                     className="btn p-0 text-muted btn-link btn-lg"
                                   >
