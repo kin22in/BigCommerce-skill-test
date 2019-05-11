@@ -3,9 +3,8 @@ import "./Product.css";
 import { ProductConsumer } from "../context.js";
 class Product extends Component {
   state = {
-    tempCart: 0,
-    showHint: false,
-    shouldUpdate: true
+    tempCart: 1,
+    showHint: false
   };
   render() {
     return (
@@ -46,24 +45,14 @@ class Product extends Component {
                   )}
                   <div className="d-flex justify-content-center align-items-stretch">
                     <div className="bg-light border mx-1 px-3 d-flex align-items-center">
-                      {this.state.shouldUpdate &&
-                      getIndexOf("cart", productId) >= 0
-                        ? getItemById("cart", productId).quantity
-                        : this.state.tempCart}
+                      {this.state.tempCart}
                     </div>
                     <div className="mr-3 d-flex flex-column">
                       <div className="">
                         <button
                           onClick={() => {
-                            let tempQuantity =
-                              this.state.shouldUpdate &&
-                              getIndexOf("cart", productId) >= 0
-                                ? getItemById("cart", productId).quantity + 1
-                                : this.state.tempCart + 1;
-
                             this.setState({
-                              tempCart: tempQuantity,
-                              shouldUpdate: false
+                              tempCart: this.state.tempCart + 1
                             });
                           }}
                           className="w-100 btn border mb-1 btn-light"
@@ -74,18 +63,10 @@ class Product extends Component {
                       <div className="">
                         <button
                           onClick={() => {
-                            let tempQuantity =
-                              this.state.shouldUpdate &&
-                              getIndexOf("cart", productId) >= 0
-                                ? getItemById("cart", productId).quantity - 1
-                                : this.state.tempCart > 0
-                                ? this.state.tempCart - 1
-                                : 0;
-
-                            this.setState({
-                              tempCart: tempQuantity,
-                              shouldUpdate: false
-                            });
+                            this.state.tempCart > 0 &&
+                              this.setState({
+                                tempCart: this.state.tempCart - 1
+                              });
                           }}
                           className="btn w-100 border btn-light"
                         >

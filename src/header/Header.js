@@ -19,15 +19,14 @@ export default class Header extends Component {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <a
-                href="https://www.bigcommerce.com.au/product/"
+              <button
                 className="nav-link btn btn-link dropdown-toggle d-none d-md-block"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Shop
-              </a>
+                <Link to="/">Shop</Link>
+              </button>
             </li>
             <li className="nav-item dropdown">
               <Link className="nav-link" to="/journal">
