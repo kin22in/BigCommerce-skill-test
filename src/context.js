@@ -98,9 +98,10 @@ class ProductProvider extends Component {
   incrementQuanity = (productId, setQuantity) => {
     let tempCart = [...this.state.cart];
     let getExisitngIndex = this.getIndexOf("cart", productId);
-    tempCart[getExisitngIndex].quantity = setQuantity
-      ? setQuantity
-      : tempCart[getExisitngIndex].quantity + 1;
+    tempCart[getExisitngIndex].quantity =
+      setQuantity !== undefined
+        ? setQuantity
+        : tempCart[getExisitngIndex].quantity + 1;
     tempCart[getExisitngIndex].total =
       tempCart[getExisitngIndex].quantity * tempCart[getExisitngIndex].price;
     let cartMetaDetails = this.updateCartMetaDetails(tempCart);

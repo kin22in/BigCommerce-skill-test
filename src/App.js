@@ -15,7 +15,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <main className="main-content">
+          <main className="mb-6 main-content">
             <Switch>
               <Route exact path="/cart" component={Cart} />
               <Route exact path="/productdetails" component={Product} />

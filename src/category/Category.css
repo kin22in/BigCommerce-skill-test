@@ -5,6 +5,7 @@
 }
 .banner-image {
   position: relative;
+  max-height: 350px;
 }
 .banner-text {
   position: absolute;

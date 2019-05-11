@@ -9,7 +9,7 @@ export default function BannerImage() {
       </div>
       <img
         src="media/plates-header.jpg"
-        className="w-100 banner-image"
+        className="w-100 img-fluid banner-image"
         alt="Banner Image - Plates Title"
       />
     </div>
