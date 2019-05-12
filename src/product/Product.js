@@ -9,7 +9,7 @@ class Product extends Component {
   render() {
     return (
       <ProductConsumer>
-        {({ productDetail, getIndexOf, getItemById, addToCart }) => {
+        {({ productDetail, addToCart }) => {
           const {
             title,
             brand,
@@ -44,7 +44,7 @@ class Product extends Component {
                     </div>
                   )}
                   <div className="d-flex justify-content-center align-items-stretch">
-                    <div className="bg-light border mx-1 px-3 d-flex align-items-center">
+                    <div data-testId="quantityCount" className="bg-light border mx-1 px-3 d-flex align-items-center">
                       {this.state.tempCart}
                     </div>
                     <div className="mr-3 d-flex flex-column">

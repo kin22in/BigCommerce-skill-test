@@ -154,7 +154,7 @@ class ProductProvider extends Component {
     this.setState({
       cart: tempCart,
       cartTotal: cartMetaDetails.cartTotal,
-      cartCount: cartMetaDetails.cartQuantity,
+      cartCount: cartMetaDetails.cartQuantity
     });
   };
 
@@ -173,8 +173,6 @@ class ProductProvider extends Component {
           removeFromCart: this.removeFromCart,
           openModal: this.openModal,
           closeModal: this.closeModal,
-          getIndexOf: this.getIndexOf,
-          getItemById: this.getItemById,
           setWrapperRef: this.setWrapperRef,
           incrementQuanity: this.incrementQuanity,
           decrementQuanity: this.decrementQuanity,
@@ -190,4 +188,4 @@ class ProductProvider extends Component {
 
 const ProductConsumer = ProductContext.Consumer;
 
-export { ProductProvider, ProductConsumer };
+export { ProductProvider, ProductConsumer, ProductContext };

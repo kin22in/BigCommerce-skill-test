@@ -19,6 +19,8 @@
     "dev-server": "json-server -p 8080 db.json"
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "@types/jest": "^24.0.12",
+    "prettier": "^1.17.0",
+    "react-testing-library": "^7.0.0"
   }
 }
