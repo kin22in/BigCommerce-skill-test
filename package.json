@@ -16,6 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "coverage": "npm test -- --coverage",
     "dev-server": "json-server -p 8080 db.json"
   },
   "devDependencies": {

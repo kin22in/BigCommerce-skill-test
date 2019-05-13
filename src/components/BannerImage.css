@@ -1,0 +1,9 @@
+.banner-text {
+  height: 300px;
+}
+.jumbotron-fluid {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/media/plates-header.jpg");
+}

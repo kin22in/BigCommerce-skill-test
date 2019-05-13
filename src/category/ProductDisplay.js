@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { ProductConsumer } from "../context.js";
 
 export default function ProductDisplay(props) {
+  if(!props.productDisplayDetail) return null;
   const { title, brand, price, image, productId } = props.productDisplayDetail;
   return (
     <div className="col-6 col-md-4 p-3">

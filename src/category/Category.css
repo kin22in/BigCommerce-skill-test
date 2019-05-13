@@ -1,14 +1,2 @@
 .Category {
 }
-.banner-wrapper {
-  position: relative;
-}
-.banner-image {
-  position: relative;
-  max-height: 300px;
-}
-.banner-text {
-  position: absolute;
-  z-index: 1;
-  color: #fff;
-}

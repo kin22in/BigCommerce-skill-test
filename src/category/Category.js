@@ -7,9 +7,9 @@ import { ProductConsumer } from "../context.js";
 export default function Category() {
   return (
     <div className="Category">
-      <div className="container-fluid">
+      
         <BannerImage />
-      </div>
+      
       <div className="container">
         <div className="row">
           <ProductConsumer>
