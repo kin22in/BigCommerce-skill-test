@@ -1,5 +1,6 @@
 const baseUrl = "http://localhost:8080/products";
 
-export const loadStoreProducts = () => {
-  return fetch(baseUrl).then(res => res.json());
+export const loadStoreProducts = async () => {
+  const res = await fetch(baseUrl);
+  return res.json();
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "react-testing-library";
 import { BrowserRouter } from "react-router-dom";
-import { Link, Route, Router, Switch } from "react-router-dom";
 import Product from "../product/Product.js";
 import { ProductContext } from "../context.js";
 

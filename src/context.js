@@ -47,20 +47,18 @@ class ProductProvider extends Component {
     });
   };
 
-  getProductsData = () => {
-    //Calling service to get Data from the Mock Api
-    loadStoreProducts().then(res => {
-      let products = [];
-      res.forEach((item, index) => {
-        let singleItem = { ...item };
-        //creating a unique if based of index
-        singleItem.productId = index + 1;
-        // creating new array based of the new object
-        products = [...products, singleItem];
-      });
-      this.setState({
-        products
-      });
+  getProductsData = async () => {
+    let res = await loadStoreProducts();
+    let products = [];
+    res.forEach((item, index) => {
+      let singleItem = { ...item };
+      //creating a unique if based of index
+      singleItem.productId = index + 1;
+      // creating new array based of the new object
+      products = [...products, singleItem];
+    });
+    this.setState({
+      products
     });
   };
 
