@@ -1,6 +1,7 @@
 .image-wrapper {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 .image-wrapper img {
@@ -8,6 +9,7 @@
   height: 212px;
   margin: 0;
   position: relative;
+
   vertical-align: middle;
   padding: 0px;
 }

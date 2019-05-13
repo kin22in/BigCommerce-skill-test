@@ -5,16 +5,14 @@ import PropTypes from "prop-types";
 import { ProductConsumer } from "../context.js";
 
 export default function ProductDisplay(props) {
-  if(!props.productDisplayDetail) return null;
+  if (!props.productDisplayDetail) return null;
   const { title, brand, price, image, productId } = props.productDisplayDetail;
   return (
     <div className="col-6 col-md-4 p-3">
       <div className="product-display p-3">
         <div className="product-img text-center">
           <div className="image-wrapper">
-            <a href="#">
-              <img className="img-fluid" src={`media/${image}`} alt={title} />
-            </a>
+            <img className="img-fluid" src={`media/${image}`} alt={title} />
 
             <div className="img-overlay align-items-stretch d-flex flex-column justify-content-center align-items-center">
               <div className="mb-3">

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import details from "./data/details";
 import { loadStoreProducts } from "./services/storeServices.js";
 
 const ProductContext = React.createContext();
@@ -50,12 +49,9 @@ class ProductProvider extends Component {
   getProductsData = async () => {
     let res = await loadStoreProducts();
     let products = [];
-    res.forEach((item, index) => {
-      let singleItem = { ...item };
-      //creating a unique if based of index
-      singleItem.productId = index + 1;
-      // creating new array based of the new object
-      products = [...products, singleItem];
+    products = res.map((item, index) => {
+      item.productId = index + 1;
+      return item;
     });
     this.setState({
       products
@@ -128,8 +124,7 @@ class ProductProvider extends Component {
   };
 
   createNewCartEntry(productId, setQuantity) {
-    let productToAdd = this.getItemById("products", productId);
-    let tempProduct = { ...productToAdd };
+    let tempProduct = this.getItemById("products", productId);
     let tempCart = [...this.state.cart];
     tempProduct.quantity = setQuantity ? setQuantity : 1;
     tempProduct.total = tempProduct.quantity * tempProduct.price;
