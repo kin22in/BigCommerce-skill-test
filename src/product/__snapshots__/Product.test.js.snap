@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Creating Snapshot 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="row text-center"
+  >
+    <div
+      class="col-12 mt-3 mb-5"
+    >
+      HOME / PLATES /
+      Blue Stripe Stoneware Plate
+    </div>
+    <div
+      class="col-8"
+    >
+      <img
+        class="img-fluid"
+        src="/media/blue-stripe-stoneware-plate.jpg"
+        alt="Blue Stripe Stoneware Plate"
+      />
+    </div>
+    <div
+      class="col-4 px-3"
+    >
+      <p
+        class="text-muted"
+      >
+        Kiriko
+      </p>
+      <p
+        class="h1"
+      >
+        Blue Stripe Stoneware Plate
+      </p>
+      <p
+        class="text-muted"
+      >
+        $
+        40
+      </p>
+      <p
+        class="text-muted"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at purus pulvinar, placerat turpis ac, interdum metus. In eget massa sed enim hendrerit auctor a eget.
+      </p>
+      <hr
+        class="px-1"
+      />
+      <div
+        class="d-flex justify-content-center align-items-stretch"
+      >
+        <div
+          data-testid="quantityCount"
+          class="bg-light border mx-1 px-3 d-flex align-items-center"
+        >
+          1
+        </div>
+        <div
+          class="mr-3 d-flex flex-column"
+        >
+          <div
+            class=""
+          >
+            <button
+              class="w-100 btn border mb-1 btn-light"
+            >
+              +
+            </button>
+          </div>
+          <div
+            class=""
+          >
+            <button
+              class="btn w-100 border btn-light"
+            >
+              -
+            </button>
+          </div>
+        </div>
+        <button
+          class="rounded-0 btn btn-dark border"
+        >
+          ADD TO CART
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

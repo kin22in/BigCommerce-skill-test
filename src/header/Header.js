@@ -50,6 +50,7 @@ export default class Header extends Component {
               return (
                 <li className="nav-item">
                   <button
+                    data-testid="cartButton"
                     className="btn btn-link dropdown-toggle"
                     onClick={event => {
                       openModal(event);

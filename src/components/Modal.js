@@ -24,6 +24,7 @@ export default class Modal extends Component {
                   className="modal-wrapper p-3 shadow-lg"
                   ref={setWrapperRef}
                   tabIndex="0"
+                  data-testid="modal"
                 >
                   <div className="container">
                     <div className="row">

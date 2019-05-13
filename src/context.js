@@ -12,7 +12,7 @@ class ProductProvider extends Component {
     cartCount: 0,
     isModalOpen: false,
     modalRef: false,
-    productDetail: details
+    productDetail: null
   };
   wrapperRef = "";
   componentDidMount() {

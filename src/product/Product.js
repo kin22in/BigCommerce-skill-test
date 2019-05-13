@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import "./Product.css";
 import { ProductConsumer } from "../context.js";
 class Product extends Component {
@@ -10,6 +11,7 @@ class Product extends Component {
     return (
       <ProductConsumer>
         {({ productDetail, addToCart }) => {
+          if (!productDetail) return <Redirect to="/" />;
           const {
             title,
             brand,
@@ -44,7 +46,10 @@ class Product extends Component {
                     </div>
                   )}
                   <div className="d-flex justify-content-center align-items-stretch">
-                    <div data-testId="quantityCount" className="bg-light border mx-1 px-3 d-flex align-items-center">
+                    <div
+                      data-testid="quantityCount"
+                      className="bg-light border mx-1 px-3 d-flex align-items-center"
+                    >
                       {this.state.tempCart}
                     </div>
                     <div className="mr-3 d-flex flex-column">

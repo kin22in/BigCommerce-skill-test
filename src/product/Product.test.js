@@ -56,3 +56,16 @@ test("Decrement quantity on clicking -", () => {
   fireEvent.click(decrement);
   expect(quantityCount.textContent).toEqual("0");
 });
+
+test("Creating Snapshot", () => {
+  const div = document.createElement("div");
+  const { container } = render(
+    <ProductContext.Provider value={{ productDetail: detail }}>
+      <BrowserRouter>
+        <Product />
+      </BrowserRouter>
+    </ProductContext.Provider>
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
